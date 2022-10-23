@@ -1,0 +1,9 @@
+RewriteEngine on
+
+# allow access to ajax_file.php
+RewriteCond %{THE_REQUEST} index\.php [NC]
+RewriteRule ^ - [NC,L]
+
+#disallow access to other php files
+RewriteCond %{THE_REQUEST} .+\.php [NC]
+RewriteRule ^ - [F,L]
